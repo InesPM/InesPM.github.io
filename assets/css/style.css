@@ -1,9 +1,9 @@
 :root{
-  --bg: #ffffff;
-  --ink: #111111;
-  --muted: #5a5a5a;
+  --bg: #FFF9EA;
+  --ink: #2A6772;
+  --muted: #D17F92;
   --line: #e8e8e8;
-  --card: #ffffff;
+  --card: #89C7AE;
   --shadow: 0 10px 30px rgba(0,0,0,.08);
   --radius: 16px;
   --max: 1020px;
