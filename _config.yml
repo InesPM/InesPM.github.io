@@ -3,3 +3,4 @@ description: "Postdoctoral Researcher in Astrophysics, ASTRON/UvA"
 baseurl: 'https://inespm.github.io/' # Website URL
 markdown: kramdown
 permalink: pretty
+theme: minima
