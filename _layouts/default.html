@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title }} · {{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <div class="brand-name">{{ site.title }}</div>
+        <div class="brand-sub">{{ site.description }}</div>
+      </a>
+
+      <nav class="nav">
+        <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Home</a>
+        <a href="{{ '/about/' | relative_url }}" class="{% if page.url contains '/about/' %}active{% endif %}">About</a>
+        <a href="{{ '/experience/' | relative_url }}" class="{% if page.url contains '/experience/' %}active{% endif %}">Experience</a>
+        <a href="{{ '/thesis/' | relative_url }}" class="{% if page.url contains '/thesis/' %}active{% endif %}">Thesis</a>
+        <a href="{{ '/publications/' | relative_url }}" class="{% if page.url contains '/publications/' %}active{% endif %}">Publications</a>
+        <a href="{{ '/articles/' | relative_url }}" class="{% if page.url contains '/articles/' %}active{% endif %}">Articles</a>
+        <a href="{{ '/events/' | relative_url }}" class="{% if page.url contains '/events/' %}active{% endif %}">Events</a>
+        <a href="{{ '/contact/' | relative_url }}" class="{% if page.url contains '/contact/' %}active{% endif %}">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  {% if page.hero %}
+  <section class="hero" style="background-image:url('{{ page.hero | relative_url }}')">
+    <div class="container hero-inner">
+      <div class="hero-card">
+        <h1>{{ page.hero_title }}</h1>
+        {% if page.hero_subtitle %}
+          <p class="lead">{{ page.hero_subtitle }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <main class="container content">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="footer-title">© {{ "now" | date: "%Y" }} {{ site.title }}</div>
+        <div class="footer-note">Built with GitHub Pages.</div>
+      </div>
+
+      <div class="footer-links">
+        <!-- Replace these with your real links -->
+        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://scholar.google.com/" target="_blank" rel="noreferrer">Google Scholar</a>
+        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="mailto:your.email@example.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
