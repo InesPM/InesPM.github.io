@@ -1,0 +1,87 @@
+.time-line-container>div:last-child .education__time>.education__line {
+    display: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Caudex:wght@400;700&display=swap');
+:root {
+  --sidebar: #2A6772;
+  --paragraph: #000000;
+  --button: #5D9D83;
+  --heading: #D17F92;
+}
+
+body {
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 300;
+  position: relative;
+  background: transparent;
+}
+
+body {
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 300;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.75)
+    ),
+    url("/green_swirls.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Caudex", "Alice", Georgia, serif;
+  color: var(--heading);
+}
+
+p {
+  color: var(--paragraph);
+}
+
+.btn {
+  background-color: var(--button);
+  border-color: var(--button);
+  color: white;
+}
+
+.btn:hover {
+  background-color: #4f8b72;
+  border-color: #4f8b72;
+}
+
+.sidebar {
+  background-color: #2A6772;
+  color: white;
+}
+
+/* .sidebar a {
+  color: white;
+} */
+
+/* .sidebar a:hover {
+  color: #D17F92;
+} */
+
+.sidebar .menu a {
+  color: white;
+}
+
+.sidebar .menu a:hover {
+  background-color: #5D9D83;
+  color: white;
+}
+
+.section-title {
+  font-family: "Caudex", "Alice", Georgia, serif;
+  color: #D17F92;
+}
