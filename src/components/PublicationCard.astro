@@ -1,0 +1,106 @@
+---
+const {
+  title,
+  authors,
+  journal,
+  description,
+  image,
+  url,
+} = Astro.props;
+---
+
+<div class="publication-card">
+  <img
+    src={image}
+    alt={`Figure from ${title}`}
+    class="publication-image"
+  />
+
+  <div class="publication-content">
+    <a href={url} target="_blank" class="publication-title">
+      {title}
+    </a>
+
+    <p class="publication-authors">
+      <slot name="authors" />
+    </p>
+
+    <p class="publication-journal">
+      {journal}
+    </p>
+
+    {description && (
+      <p class="publication-description">
+        {description}
+      </p>
+    )}
+  </div>
+</div>
+
+<style>
+  .publication-card {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    overflow: hidden;
+    background: var(--background);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  .publication-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: white;
+  }
+
+  .publication-content {
+    padding: 1.5rem 2rem;
+  }
+
+  .publication-title {
+    display: block;
+    font-family: "Caudex", "Alice", Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--subheading);
+    text-decoration: underline;
+    margin-bottom: 1rem;
+  }
+
+  .publication-title:hover {
+    opacity: 0.7;
+  }
+
+  .publication-authors {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  .publication-journal {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  .publication-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 640px) {
+    .publication-card {
+      grid-template-columns: 1fr;
+    }
+
+    .publication-image {
+      width: 100%;
+      height: 220px;
+    }
+
+    .publication-content {
+      padding: 1.25rem;
+    }
+  }
+</style>

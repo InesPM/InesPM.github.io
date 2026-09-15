@@ -1,13 +1,17 @@
-.time-line-container>div:last-child .education__time>.education__line {
-    display: none;
+.time-line-container > div:last-child .education__time > .timeline-line {
+  display: none;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Alice&family=Caudex:wght@400;700&display=swap');
 :root {
+  --sidebar-width: 19rem;
   --sidebar: #2A6772;
   --paragraph: #000000;
   --button: #5D9D83;
   --heading: #D17F92;
+  --subheading: #2A6772;
+  --background: rgba(255, 255, 255);
+  --subbackground: #FFF9EA;
 }
 
 body {
@@ -60,17 +64,10 @@ p {
 }
 
 .sidebar {
+  width: var(--sidebar-width);
   background-color: #2A6772;
   color: white;
 }
-
-/* .sidebar a {
-  color: white;
-} */
-
-/* .sidebar a:hover {
-  color: #D17F92;
-} */
 
 .sidebar .menu a {
   color: white;
@@ -84,4 +81,29 @@ p {
 .section-title {
   font-family: "Caudex", "Alice", Georgia, serif;
   color: #D17F92;
+}
+
+.page-content {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .photo-strip {
+    width: calc(100vw - var(--sidebar-width));
+    max-width: none;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.photo-caption {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  color: white;
+  text-align: center;
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 300;
 }

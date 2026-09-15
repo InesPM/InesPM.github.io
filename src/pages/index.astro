@@ -5,7 +5,7 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-12 mt-5">
-    <div class="text-5xl font-bold">Inés Pastor-Marazuela</div>
+    <div class="section-title text-5xl font-bold">Inés Pastor-Marazuela</div>
     <div class="text-3xl py-3">Postdoctoral researcher in astrophysics</div>
 
     <div class="py-2">
@@ -19,6 +19,44 @@ import HorizontalCard from "../components/HorizontalCard.astro";
     <a class="btn btn-outline ml-5" href="/contact">Contact</a>
     </div>
   </div>
+
+<section class="photo-strip my-12">
+  <div class="grid grid-cols-1 sm:grid-cols-3">
+
+    <div class="relative">
+        <img
+        src="/WSRT_IPM.JPG"
+        alt="WSRT"
+        class="w-full h-120 object-cover"
+        />
+        <p class="photo-caption">
+            Visiting the Westerbork Synthesis Radio Telescope (The Netherlands) in May 2022
+        </p>
+    </div>
+
+    <div class="relative">
+        <img
+        src="/PhD_IPM.JPG"
+        alt="PhD"
+        class="w-full h-120 object-cover"
+        />
+        <p class="photo-caption">
+            The day I obtained my PhD degree at the Agnietenkapel (Amsterdam, Nov 1 2022)
+        </p>
+    </div>
+
+    <div class="relative">
+        <img
+        src="/Lovell_IPM.JPG"
+        alt="Lovell"
+        class="w-full h-120 object-cover"
+        />
+        <p class="photo-caption">
+            Visiting the Lovell Radio telescope during the bluedot festival in July 2023
+        </p>
+    </div>
+  </div>
+</section>
 
 <div class="mt-10">
   <div class="section-title text-3xl w-full font-bold mb-5 mt-10">
@@ -63,12 +101,12 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 </div>
 
 <section class="border-y border-base-300 py-12 my-12">
+    <div class="section-title text-3xl w-full font-bold mb-5 mt-10">
+    PhD Thesis
+    </div>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
 
     <div>
-      <div class="section-title text-3xl w-full font-bold mb-5 mt-10">
-        PhD Thesis
-      </div>
 
       <p class="text-lg mb-5">
         University of Amsterdam, November 1st 2022
