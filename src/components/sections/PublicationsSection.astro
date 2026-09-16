@@ -1,13 +1,14 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import PublicationCard from "../components/PublicationCard.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PublicationCard from "../../components/PublicationCard.astro";
 ---
 
-<BaseLayout
+<!-- <BaseLayout
   title="Publications | Inés Pastor-Marazuela"
   description="Scientific publications by Inés Pastor-Marazuela"
   sideBarActiveItemID="publications"
->
+> -->
+<section id="publications" class="scroll-section"></section>
   <div class="section-title text-3xl font-bold mb-8">
     First author publications
   </div>
@@ -104,4 +105,5 @@ import PublicationCard from "../components/PublicationCard.astro";
     <div class="mt-8">
     <a class="btn" href="https://ui.adsabs.harvard.edu/user/libraries/7l4bB8r9RamBYfJOrpzAXw">Full list of publications</a>
     </div>
-</BaseLayout>
+</section>
+<!-- </BaseLayout> -->

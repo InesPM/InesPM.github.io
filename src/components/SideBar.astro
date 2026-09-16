@@ -27,6 +27,51 @@ const { sideBarActiveItemID } = Astro.props;
     </div>
 
     <SideBarMenu sideBarActiveItemID={sideBarActiveItemID} />
+
+    <a
+    href="/crafts/"
+    class="crafts-button"
+    aria-label="Visit Craftinés PM"
+    >
+    <img
+        src="/crafts/craftines_logo_pink.png"
+        alt="Craftinés PM"
+    />
+    </a>
+
     <SideBarFooter />
   </aside>
 </div>
+
+<style>
+  .crafts-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40%;
+    margin: 6rem auto;
+    /* padding: 0.7rem 1.2rem; */
+
+    border-radius: 0.5rem;
+
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  .crafts-button:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+  }
+
+.crafts-button img {
+  display: block;
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.25);
+}
+</style>

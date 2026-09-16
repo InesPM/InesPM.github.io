@@ -1,0 +1,43 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+
+const {
+  title = "Craftinés PM",
+  description = "Crochet patterns and handmade crafts by Craftinés PM",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={title}
+      description={description}
+    />
+  </head>
+
+  <body class="crafts-site">
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  body.crafts-site {
+    margin: 0;
+    min-height: 100vh;
+
+    background-image:
+      linear-gradient(
+        rgba(255, 255, 255, 0.75),
+        rgba(255, 255, 255, 0.75)
+      ),
+      url("/crafts/knit_background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+</style>

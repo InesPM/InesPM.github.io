@@ -1,9 +1,10 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import TimeLineElement from "../components/cv/TimeLine.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TimeLineElement from "../../components/cv/TimeLine.astro";
 ---
 
-<BaseLayout title="Resume" sideBarActiveItemID="cv">
+<!-- <BaseLayout title="Resume" sideBarActiveItemID="cv"> -->
+<section id="cv" class="scroll-section">
   <!-- <div class="mb-5">
     <div class="section-title text-3xl w-full font-bold mb-5 mt-10">Profile</div>
   </div>
@@ -47,21 +48,31 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   <div class="time-line-container grid gap-4 mb-10">
     <TimeLineElement
       title="MSc in astrophysics"
-      subtitle="2016 - 2018, Université Paul Sbatier, Toulouse, France.
-      MSc thesis at IRAP."
-    />
+      subtitle="2016 - 2018, Université Paul Sbatier, Toulouse, France."
+    >
+      MSc thesis at IRAP on searching for X-ray transients in XMM-Newton data.
+    </TimeLineElement>
     <TimeLineElement
       title="BSc in Physics"
-      subtitle="2013 - 2016, Université Paul Sabatier, Toulouse, France.
-      Graduated with honours."
-    />
+      subtitle="2013 - 2016, Université Paul Sabatier, Toulouse, France."
+    > 
+    Graduated with honours.      
+    </TimeLineElement>
     <TimeLineElement
       title="Bachibac - Bachillerato & Baccalauréat"
-      subtitle="Double Spanish and French high school diploma. 
-      Ranked first in my graduation cohort. 
-      2011 - 2013, Segovia, Spain. "
-    />    
+      subtitle="2011 - 2013, Segovia, Spain. "
+    >
+    Double Spanish and French high school diploma. Ranked first in my graduation cohort.
+    </TimeLineElement>    
   </div>
+
+  <a
+    class="btn"
+    href="/CV_IPM_Sept2026.pdf"
+    download
+  >
+    Download full CV
+  </a>
 
   <!-- <div class="mb-5">
     <div class="section-title text-3xl w-full font-bold mb-5 mt-10">Certifications</div>
@@ -97,4 +108,5 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     <li>Skill Name</li>
     <li>Skill Name</li>
   </ul> -->
-</BaseLayout>
+</section>
+<!-- </BaseLayout> -->

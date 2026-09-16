@@ -1,0 +1,67 @@
+---
+const {
+  images,
+  description,
+  height = "400px",
+} = Astro.props;
+---
+
+<div class="gallery-item">
+  <div
+    class="gallery-images"
+    style={`--n-images: ${images.length}; --image-height: ${height};`}
+  >
+    {images.map((image) => (
+      <img
+        src={image.src}
+        alt={image.alt}
+        loading="lazy"
+        style={`object-position: ${image.position || "center"};`}
+      />
+    ))}
+  </div>
+
+  {description && (
+    <p class="gallery-description">
+      {description}
+    </p>
+  )}
+</div>
+
+<style>
+  .gallery-item {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .gallery-images {
+    display: grid;
+    grid-template-columns: repeat(var(--n-images), minmax(0, 1fr));
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .gallery-images img {
+    width: 100%;
+    height: var(--image-height);
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .gallery-description {
+    margin-top: 0.75rem;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 640px) {
+    .gallery-images {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-images img {
+      height: 250px;
+    }
+  }
+</style>

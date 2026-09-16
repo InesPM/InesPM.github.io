@@ -1,6 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
+import PublicationsSection
+  from "../components/sections/PublicationsSection.astro";
+import OutreachSection
+  from "../components/sections/OutreachSection.astro";
+import CVSection
+  from "../components/sections/CVSection.astro";
 ---
 
 <BaseLayout sideBarActiveItemID="home">
@@ -14,10 +20,10 @@ import HorizontalCard from "../components/HorizontalCard.astro";
     </p>
     </div>
 
-    <div class="mt-8">
+    <!-- <div class="mt-8">
     <a class="btn" href="/publications">Publications</a>
     <a class="btn btn-outline ml-5" href="/contact">Contact</a>
-    </div>
+    </div> -->
   </div>
 
 <section class="photo-strip my-12">
@@ -58,7 +64,13 @@ import HorizontalCard from "../components/HorizontalCard.astro";
   </div>
 </section>
 
-<div class="mt-10">
+<PublicationsSection />
+
+<CVSection />
+
+<OutreachSection />
+
+<!-- <div class="mt-10">
   <div class="section-title text-3xl w-full font-bold mb-5 mt-10">
     Research
   </div>
@@ -80,9 +92,9 @@ import HorizontalCard from "../components/HorizontalCard.astro";
     including LOFAR, MeerKAT and the Westerbork Synthesis Radio Telescope."
     url="/research"
   />
-</div>
+</div> -->
 
-<div class="mt-10">
+<!-- <div class="mt-10">
   <div class="section-title text-3xl w-full font-bold mb-5 mt-10">
     Current position
   </div>
@@ -98,7 +110,7 @@ import HorizontalCard from "../components/HorizontalCard.astro";
     <a class="btn" href="/experience">Experience</a>
     <a class="btn btn-outline ml-5" href="/publications">Publications</a>
   </div>
-</div>
+</div> -->
 
 <section class="border-y border-base-300 py-12 my-12">
     <div class="section-title text-3xl w-full font-bold mb-5 mt-10">

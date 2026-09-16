@@ -1,0 +1,124 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Contact | Inés Pastor-Marazuela"
+  description="Contact Inés Pastor-Marazuela"
+  sideBarActiveItemID="contact"
+>
+  <div class="section-title text-3xl font-bold mb-3">
+    Contact
+  </div>
+
+  <p class="mb-8">
+    Feel free to get in touch about research, collaborations, talks,
+    outreach, or other enquiries.
+  </p>
+
+  <div class="contact-card">
+    <form id="contact-form">
+      <div class="form-field">
+        <label for="subject">Subject</label>
+        <input
+          id="subject"
+          name="subject"
+          type="text"
+          placeholder="Subject"
+          required
+        />
+      </div>
+
+      <div class="form-field">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="9"
+          placeholder="Write your message here..."
+          required
+        ></textarea>
+      </div>
+
+      <button type="submit" class="btn">
+        Send message
+      </button>
+    </form>
+  </div>
+
+  <div class="mt-8 text-center">
+    <p class="text-sm">
+      Alternatively, you can reach me at
+      <span id="email-address"></span>
+    </p>
+  </div>
+</BaseLayout>
+
+<script>
+  // Split the address so it isn't written directly into the HTML.
+  const user = "ines.pastor.marazuela";
+  const domain = "gmail.com";
+  const email = `${user}@${domain}`;
+
+  const emailElement = document.getElementById("email-address");
+
+  if (emailElement) {
+    emailElement.textContent = email;
+  }
+
+  const form = document.getElementById("contact-form");
+
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const subjectElement =
+      document.getElementById("subject") as HTMLInputElement;
+    const messageElement =
+      document.getElementById("message") as HTMLTextAreaElement;
+
+    const subject = encodeURIComponent(subjectElement.value);
+    const message = encodeURIComponent(messageElement.value);
+
+    window.location.href =
+      `mailto:${email}?subject=${subject}&body=${message}`;
+  });
+</script>
+
+<style>
+  .contact-card {
+    padding: 2rem;
+    background: rgba(220, 235, 232, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  .form-field {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-field label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(42, 103, 114, 0.35);
+    border-radius: 0.3rem;
+    background: rgba(255, 255, 255, 0.8);
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+  }
+
+  .form-field textarea {
+    resize: vertical;
+  }
+
+  .form-field input:focus,
+  .form-field textarea:focus {
+    border-color: var(--button);
+  }
+</style>

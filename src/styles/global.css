@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Caudex:wght@400;700&display=swap');
+
 .time-line-container > div:last-child .education__time > .timeline-line {
   display: none;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Alice&family=Caudex:wght@400;700&display=swap');
 :root {
   --sidebar-width: 19rem;
   --sidebar: #2A6772;
@@ -10,8 +11,10 @@
   --button: #5D9D83;
   --heading: #D17F92;
   --subheading: #2A6772;
-  --background: rgba(255, 255, 255);
-  --subbackground: #FFF9EA;
+  --background: white;
+  --background2: #FFF9EA;
+  --background3: rgba(220, 235, 232, 0.8);
+  --shadow: rgba(0, 0, 0, 0.12);
 }
 
 body {
@@ -106,4 +109,13 @@ p {
   text-align: center;
   font-family: "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif;
   font-weight: 300;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }

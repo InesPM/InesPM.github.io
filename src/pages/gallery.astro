@@ -1,0 +1,127 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import GalleryItem from "../components/GalleryItem.astro";
+---
+
+<BaseLayout
+  title="Gallery | Inés Pastor-Marazuela"
+  description="Photos from telescopes, conferences and astronomy events."
+  sideBarActiveItemID="gallery"
+>
+  <div class="section-title text-3xl font-bold mb-8">
+    Gallery
+  </div>
+
+  <!-- RADIO TELESCOPES -->
+
+  <div class="section-title text-2xl font-bold mb-6">
+    Radio Telescopes
+  </div>
+
+  <p>
+    As any good radio astronomer, I try to take a picture with every radio telescope I've had the chance to visit.
+    Here is a selection for you to enjoy!
+  </p>
+
+  <div style="margin-bottom: 2rem;"></div>
+
+  <GalleryItem
+    images={[
+      {
+        src: "/gallery/FAST.jpg",
+        alt: "FAST radio telescope",
+        position: "bottom"
+      }
+    ]}
+    description="FAST radio telescope in Guizhou, China, during the FRB2026 conference."
+  />
+
+  <GalleryItem
+    images={[
+      {
+        src: "/gallery/nenufar.jpg",
+        alt: "Nançay Radio Telescope"
+      },
+      {
+        src: "/gallery/NRT.jpg",
+        alt: "NenuFAR radio telescope"
+      },
+      {
+        src: "/gallery/decametric_nancay.jpg",
+        alt: "Decametric Array at Nançay"
+      }
+    ]}
+    description="Visiting the Nançay observatory in France, during the SALF XI conference."
+  />
+
+  <GalleryItem
+    images={[
+      {
+        src: "/gallery/SRT.jpg",
+        alt: "Sardinia Radio Telescope"
+      },
+      {
+        src: "/gallery/SRT_all.JPG",
+        alt: "SRT and all conference participants"
+      }
+    ]}
+    description="Sardinia Radio Telescope in Italy, visit during the Pulsar 2025 conference."
+  />
+
+  <GalleryItem
+    images={[
+      {
+        src: "/gallery/IRAM2.JPG",
+        alt: "IRAM 30m Radio Telescope"
+      },
+      {
+        src: "/gallery/IRAM.JPG",
+        alt: "IRAM 30m Radio Telescope"
+      },
+      {
+        src: "/gallery/sierra_nevada.JPG",
+        alt: "IRAM 30m Radio Telescope and all conference participants"
+      }
+    ]}
+    description="IRAM 30m Radio Telescope in Sierra Nevada, Spain, visit during the Interferometry school in 2024."
+  />
+
+
+  <!-- CONFERENCES -->
+
+  <!-- <div class="section-title text-2xl font-bold mt-14 mb-6">
+    Conferences
+  </div>
+
+  <GalleryItem
+    images={[
+      {
+        src: "/gallery/conference1.jpg",
+        alt: "Conference presentation"
+      },
+      {
+        src: "/gallery/conference2.jpg",
+        alt: "Conference group photo"
+      }
+    ]}
+    description="Fast Radio Burst conference, Amsterdam, 2025."
+  /> -->
+
+
+  <!-- OTHER -->
+
+  <!-- <div class="section-title text-2xl font-bold mt-14 mb-6">
+    Other
+  </div>
+
+  <GalleryItem
+    images={[
+      {
+        src: "/gallery/other1.jpg",
+        alt: "Astronomy outreach event"
+      }
+    ]}
+    description="Astronomy and other adventures."
+  /> -->
+
+</BaseLayout>

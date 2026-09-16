@@ -1,0 +1,124 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import OutreachCard from "../../components/OutreachCard.astro";
+import VideoCard from "../../components/VideoCard.astro";
+---
+
+<!-- <BaseLayout
+  title="Outreach | Inés Pastor-Marazuela"
+  description="Science communication, public talks and media appearances by Inés Pastor-Marazuela"
+  sideBarActiveItemID="outreach" -->
+<section id="outreach" class="scroll-section"></section>
+  <div class="section-title text-3xl font-bold mb-3">
+    Outreach & Media
+  </div>
+
+  <p class="mb-10">
+    I enjoy communicating astronomy to a broader audience through
+    public talks, festivals, interviews, and other outreach activities.
+    Here are some examples of events and media appearances I have
+    participated in, both in Spanish and English.
+    Get in touch if you'd like to collaborate or invite me to an event!
+  </p>
+
+  <div class="mb-10">
+    <OutreachCard
+      title="Charla pública en el Espinar, Segovia"
+      image="/outreach/hesperides.jpg"
+      imagePosition="left"
+      url="https://asociacionhesperides.org/resolviendo-un-misterio-extragalactico-rafagas-rapidas-de-radio/"
+      description="Organizada por la Asociación Hespérides en el ayuntamiento de El Espinar, Segovia, el 23 de Agosto de 2025."
+    />
+  </div>
+
+  <div class="mb-10">
+    <VideoCard
+      title="Entrevista 8 Magazine Segovia"
+      video="https://www.youtube.com/embed/bxDlawhb5eI?start=874"
+      description="Presentación en la televisión local de una charla divulgativa."
+    />
+  </div>
+
+  <div class="mb-10">
+    <OutreachCard
+      title="Jodcast interview"
+      image="/outreach/jodcast.avif"
+      imagePosition="right"
+      url="YOUR-LINK"
+      description="The Jodcast is an astronomy podcast run by 
+      PhD students at the Jodrell Bank Centre for Astrophysics 
+      (University of Manchester) that has been running since 2006! 
+      Before I left the University of Manchester, in March 2025, 
+      I gave an interview about FRBs and the work I had been doing 
+      in Manchester. Give it a listen if you want to hear me make 
+      weird noises to represent FRBs!"
+    />
+  </div>
+
+  <!-- IMAGE + DESCRIPTION -->
+
+  <div class="mb-10">
+    <OutreachCard
+      title="Bluedot 2023"
+      image="/outreach/bluedot.avif"
+      url="YOUR-LINK"
+      description="In 2023, I participated in Bluedot, a science and
+      music festival at Jodrell Bank Observatory, where I gave a talk
+      about Fast Radio Bursts."
+    />
+  </div>
+
+
+  <!-- JUST A POSTER -->
+
+  <div class="poster mb-10">
+    <img
+      src="/outreach/jovenes_cientificos_segovianos.avif"
+      alt="Poster for outreach event"
+    />
+  </div>
+
+
+  <!-- IMAGE + DESCRIPTION, IMAGE ON RIGHT -->
+
+  <div class="mb-10">
+    <OutreachCard
+      title="Apertif press release"
+      image="/outreach/apertif.avif"
+      imagePosition="right"
+      url="YOUR-LINK"
+      description="Press release about our discovery of two dozen Fast
+      Radio Bursts with the Westerbork Synthesis Radio Telescope and
+      their similarities to radio emission from young neutron stars."
+    />
+  </div>
+
+
+  <!-- VIDEO + DESCRIPTION -->
+
+  <div class="mb-10">
+    <VideoCard
+      title="Interview for Telesegovia"
+      video="https://www.youtube.com/embed/nbwOhrE04lc"
+      description="Interview about Fast Radio Bursts and my research,
+      recorded in September 2021."
+    />
+  </div>
+
+</section>
+<!-- </BaseLayout> -->
+
+<style>
+  .poster {
+    display: flex;
+    justify-content: center;
+  }
+
+  .poster img {
+    width: auto;
+    max-width: 100%;
+    max-height: 650px;
+    object-fit: contain;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+</style>
