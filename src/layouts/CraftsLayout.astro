@@ -1,9 +1,10 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
+import CraftsHeader from "../components/crafts/CraftsHeader.astro";
 
 const {
   title = "Craftinés PM",
-  description = "Crochet patterns and handmade crafts by Craftinés PM",
+  description = "Knit and crochet patterns and handmade crafts by Craftinés PM",
 } = Astro.props;
 ---
 
@@ -17,6 +18,8 @@ const {
   </head>
 
   <body class="crafts-site">
+    <CraftsHeader />
+
     <main>
       <slot />
     </main>

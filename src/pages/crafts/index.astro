@@ -1,22 +1,28 @@
 ---
 import CraftsLayout from "../../layouts/CraftsLayout.astro";
+import PatternFeature
+  from "../../components/crafts/PatternFeature.astro";
 ---
 
 <CraftsLayout>
-  <!-- completely different Craftinés website -->
-  <div class="pb-12 mt-5">
-    <div class="section-title text-5xl font-bold">Craftinés PM</div>
-    <div class="text-3xl py-3">Crochet and knitting creations</div>
+  <PatternFeature
+    name="Alpaca Cardigan"
+    image="/crafts/patterns/alpaca-cardigan.jpg"
+    url="/crafts/patterns/alpaca-cardigan/"
+    imagePosition="right"
+  />
 
-    <div class="py-2">
-    <p class="text-base leading-relaxed text-justify">
-        Hello! I’m Inés, a postdoctoral researcher at ASTRON in the Netherlands. My research centers on radio transients, specifically Fast Radio Bursts (FRBs), which are enigmatic astrophysical phenomena originating from distant galaxies, lasting only a few milliseconds, and detectable solely in radio waves. During my PhD, I used the Apertif radio telescope in the Netherlands, and the MeerKAT radio telescope (South Africa) as a Rubicon fellow at the University of Manchester, UK. Currently, as part of the Astroflash team, I continue my search for radio transients using LOFAR. I completed my PhD in November 2022 and earned my Master’s degree from the Université Paul Sabatier in Toulouse, France, in 2018. I grew up in the beautiful town of Segovia, Spain. Welcome to my website!
-    </p>
-    </div>
+  <PatternFeature
+    name="Lace Top"
+    image="/crafts/patterns/lace-top.jpg"
+    url="/crafts/patterns/lace-top/"
+    imagePosition="left"
+  />
 
-    <!-- <div class="mt-8">
-    <a class="btn" href="/publications">Publications</a>
-    <a class="btn btn-outline ml-5" href="/contact">Contact</a>
-    </div> -->
-  </div>
+  <PatternFeature
+    name="Summer Scarf"
+    image="/crafts/patterns/scarf.jpg"
+    url="/crafts/patterns/summer-scarf/"
+    imagePosition="right"
+  />
 </CraftsLayout>

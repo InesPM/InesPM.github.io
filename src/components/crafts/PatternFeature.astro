@@ -1,0 +1,93 @@
+---
+const {
+  name,
+  image,
+  url,
+  imagePosition = "right",
+} = Astro.props;
+---
+
+<section
+  class:list={[
+    "pattern-feature",
+    imagePosition === "left" && "image-left",
+  ]}
+>
+  <div class="pattern-name">
+    <a href={url}>
+      <h2>{name}</h2>
+    </a>
+  </div>
+
+  <a href={url} class="pattern-image">
+    <img src={image} alt={name} />
+  </a>
+</section>
+
+<style>
+  .pattern-feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 600px;
+  }
+
+  .pattern-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+  }
+
+  .pattern-name h2 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 4.5rem);
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .pattern-name a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .pattern-image {
+    overflow: hidden;
+  }
+
+  .pattern-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .pattern-image:hover img {
+    transform: scale(1.02);
+  }
+
+  .image-left .pattern-image {
+    order: -1;
+  }
+
+  @media (max-width: 700px) {
+    .pattern-feature {
+      grid-template-columns: 1fr;
+      min-height: 0;
+    }
+
+    .pattern-image,
+    .image-left .pattern-image {
+      order: 0;
+    }
+
+    .pattern-name {
+      padding: 3rem 1.5rem;
+    }
+
+    .pattern-image img {
+      min-height: 0;
+      aspect-ratio: 4 / 5;
+    }
+  }
+</style>

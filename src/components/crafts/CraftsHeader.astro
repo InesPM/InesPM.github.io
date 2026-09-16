@@ -1,0 +1,53 @@
+<header class="crafts-header">
+  <a href="/crafts/" class="crafts-logo">
+    <img src="/crafts/Craftines_logo.png" alt="Craftinés PM" />
+  </a>
+
+  <nav>
+    <a href="/crafts/patterns/">Patterns</a>
+    <a href="/crafts/about/">About</a>
+    <a href="/crafts/#contact">Contact</a>
+    <a href="/">Astronomy</a>
+  </nav>
+</header>
+
+<style>
+  .crafts-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3rem;
+  }
+
+  .crafts-logo img {
+    width: 150px;
+    height: auto;
+  }
+
+  nav {
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  nav a {
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+  }
+
+  nav a:hover {
+    opacity: 0.55;
+  }
+
+  @media (max-width: 640px) {
+    .crafts-header {
+      padding: 1rem 1.25rem;
+    }
+
+    nav {
+      gap: 1rem;
+    }
+  }
+</style>
