@@ -22,27 +22,34 @@ const reelEmbed = reelId
     imagePosition === "right" && "image-right",
   ]}
 >
-  <div class="outreach-media">
-    {
-      reelEmbed ? (
-        <iframe
-          src={reelEmbed}
-          title={title}
-          class="outreach-reel"
-          loading="lazy"
-          allow="encrypted-media"
-          allowfullscreen
-        ></iframe>
-      ) : image ? (
-        <img
-          src={image}
-          alt={title}
-          class="outreach-image"
-          loading="lazy"
-        />
-      ) : null
-    }
-  </div>
+<div class="outreach-media">
+  {
+    reelEmbed ? (
+      <div class="outreach-reel">
+        <blockquote
+          class="instagram-media"
+          data-instgrm-permalink={reelEmbed.replace(/embed\/$/, "")}
+          data-instgrm-version="14"
+        >
+          <a
+            href={reelEmbed.replace(/embed\/$/, "")}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Watch on Instagram
+          </a>
+        </blockquote>
+      </div>
+    ) : image ? (
+      <img
+        src={image}
+        alt={title}
+        class="outreach-image"
+        loading="lazy"
+      />
+    ) : null
+  }
+</div>
 
   <div class="outreach-content">
     {
