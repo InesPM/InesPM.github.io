@@ -1,27 +1,58 @@
+
 ---
 const {
   title,
   description,
   image,
+  reel,
   url,
   imagePosition = "left",
 } = Astro.props;
+
+// Convert an Instagram Reel URL to its embeddable URL.
+const reelId = reel?.match(/\/reel\/([^/?#]+)/)?.[1];
+const reelEmbed = reelId
+  ? `https://www.instagram.com/reel/${reelId}/embed/`
+  : undefined;
 ---
 
-<div class:list={[
-  "outreach-card",
-  imagePosition === "right" && "image-right"
-]}>
-  <img
-    src={image}
-    alt={title}
-    class="outreach-image"
-  />
+<div
+  class:list={[
+    "outreach-card",
+    imagePosition === "right" && "image-right",
+  ]}
+>
+  <div class="outreach-media">
+    {
+      reelEmbed ? (
+        <iframe
+          src={reelEmbed}
+          title={title}
+          class="outreach-reel"
+          loading="lazy"
+          allow="encrypted-media"
+          allowfullscreen
+        ></iframe>
+      ) : image ? (
+        <img
+          src={image}
+          alt={title}
+          class="outreach-image"
+          loading="lazy"
+        />
+      ) : null
+    }
+  </div>
 
   <div class="outreach-content">
     {
       url ? (
-        <a href={url} target="_blank" class="outreach-title">
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="outreach-title"
+        >
           {title}
         </a>
       ) : (
@@ -38,25 +69,42 @@ const {
 <style>
   .outreach-card {
     display: grid;
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 320px minmax(0, 1fr);
     overflow: hidden;
     background: var(--background);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   }
 
   .outreach-card.image-right {
-    grid-template-columns: 1fr 320px;
+    grid-template-columns: minmax(0, 1fr) 320px;
   }
 
-  .outreach-card.image-right .outreach-image {
+  .outreach-card.image-right .outreach-media {
     order: 2;
   }
 
+  .outreach-media {
+    position: relative;
+    min-width: 0;
+    min-height: 400px;
+    overflow: hidden;
+  }
+
   .outreach-image {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    min-height: 250px;
     object-fit: cover;
+  }
+
+  .outreach-reel {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    border: 0;
+    background: white;
   }
 
   .outreach-content {
@@ -91,12 +139,21 @@ const {
       grid-template-columns: 1fr;
     }
 
-    .outreach-card.image-right .outreach-image {
+    .outreach-card.image-right .outreach-media {
       order: 0;
     }
 
+    .outreach-media {
+      min-height: 0;
+    }
+
     .outreach-image {
-      height: 240px;
+      position: static;
+      height: 260px;
+    }
+
+    .outreach-reel {
+      height: 550px;
     }
 
     .outreach-content {
