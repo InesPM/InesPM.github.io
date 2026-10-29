@@ -10,9 +10,10 @@ const {
 } = Astro.props;
 
 // Convert an Instagram Reel URL to its embeddable URL.
-const reelId = reel?.match(/\/reel\/([^/?#]+)/)?.[1];
+const reelId = reel?.match(/\/(?:reel|p)\/([^/?#]+)/)?.[1];
+
 const reelEmbed = reelId
-  ? `https://www.instagram.com/reel/${reelId}/embed/`
+  ? `https://www.instagram.com/p/${reelId}/embed/`
   : undefined;
 ---
 
@@ -160,7 +161,19 @@ const reelEmbed = reelId
     }
 
     .outreach-reel {
-      height: 550px;
+        width: 100%;
+        height: 100%;
+        min-height: 550px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        overflow: hidden;
+    }
+
+    .outreach-reel :global(.instagram-media) {
+        width: 100% !important;
+        max-width: 540px !important;
+        margin: 0 auto !important;
     }
 
     .outreach-content {
@@ -168,3 +181,32 @@ const reelEmbed = reelId
     }
   }
 </style>
+
+<script>
+  function initializeInstagram() {
+    const instagram = window as Window & {
+      instgrm?: {
+        Embeds: {
+          process: () => void;
+        };
+      };
+    };
+
+    if (instagram.instgrm) {
+      instagram.instgrm.Embeds.process();
+      return;
+    }
+
+    if (document.querySelector('script[src*="instagram.com/embed.js"]')) {
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = "https://www.instagram.com/embed.js";
+    script.async = true;
+    script.onload = () => instagram.instgrm?.Embeds.process();
+    document.body.appendChild(script);
+  }
+
+  document.addEventListener("astro:page-load", initializeInstagram);
+</script>
